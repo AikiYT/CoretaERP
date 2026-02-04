@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"] - Coreta ERP</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #EAF7F0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 260px;
+            background: #3CB371;
+            padding: 20px;
+            color: white;
+            height: 100vh;
+        }
+
+            .sidebar h2 {
+                margin-bottom: 30px;
+            }
+
+            .sidebar a {
+                display: block;
+                background: white;
+                color: #1F2937;
+                padding: 12px;
+                margin-bottom: 12px;
+                text-decoration: none;
+                border-radius: 25px;
+                text-align: center;
+                font-weight: bold;
+            }
+
+        .content {
+            padding: 30px;
+            width: 100%;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,.05);
+            width: 350px;
+        }
+
+        .btn-primary {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background: #3CB371;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Coreta ERP</h2>
+
+            <a asp-controller="Home" asp-action="Index">Dashboard</a>
+            <a asp-controller="Gestion" asp-action="Index">Gestión</a>
+            <a asp-controller="RecursosHumanos" asp-action="Index">RR - HH</a>
+            <a asp-controller="Ventas" asp-action="Index">Venta - Compra</a>
+            <a asp-controller="Proveedores" asp-action="Index">Proveedores</a>
+            <a asp-controller="Inventario" asp-action="Index">Inventario</a>
+            <a asp-controller="Reportes" asp-action="Index">Reportes</a>
+            <a asp-controller="Caja" asp-action="Index">Gestión Caja</a>
+        </div>
+
+        <div class="content">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>
