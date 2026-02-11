@@ -5,12 +5,47 @@
 
 <h2>Módulo de Gestión</h2>
 
-<div class="card">
-    <p>
-        Administración general del sistema Coreta ERP.
-    </p>
+<div class="card-container">
 
-    <button class="btn-primary">
-        Configurar Sistema
-    </button>
+    <div class="card">
+        <h4>Gestión de Usuarios</h4>
+        <a asp-controller="Gestion" asp-action="Usuarios" class="btn-coreta">
+            Ir a Usuarios
+        </a>
+    </div>
+
+    <div class="card">
+        <h4>Gestión de Roles</h4>
+        <a asp-controller="Gestion" asp-action="Roles" class="btn-coreta">
+            Ir a Roles
+        </a>
+    </div>
+
 </div>
+
+<style>
+    .card-container {
+        display: flex;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .card {
+        background: #1E293B;
+        padding: 20px;
+        border-radius: 15px;
+        color: white;
+        width: 300px;
+    }
+
+    .btn-coreta {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background: #3CB371;
+        color: white;
+        text-decoration: none;
+    }
+</style>
+

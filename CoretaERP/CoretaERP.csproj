@@ -6,4 +6,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoretaERP.Application\CoretaERP.Application.csproj" />
+    <ProjectReference Include="..\CoretaERP.Domain\CoretaERP.Domain.csproj" />
+    <ProjectReference Include="..\CoretaERP.Infrastructure.Identity\CoretaERP.Infrastructure.Identity.csproj" />
+    <ProjectReference Include="..\CoretaERP.Infrastructure.Persistence\CoretaERP.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
 </Project>

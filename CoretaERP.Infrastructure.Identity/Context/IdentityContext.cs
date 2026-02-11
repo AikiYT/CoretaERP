@@ -18,15 +18,16 @@ namespace CoretaERP.Infrastructure.Identity.Context
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
             builder.HasDefaultSchema("Identity");
 
-            builder.Entity<IdentityUser>().ToTable("User");
-
+            builder.Entity<ApplicationUser>().ToTable("Users");
             builder.Entity<IdentityRole>().ToTable("Roles");
-
             builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
-
-            builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogin");
+            builder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
+            builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+            builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
+            builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
         }
     }
 }

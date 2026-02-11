@@ -17,7 +17,7 @@ namespace CoretaERP.Infrastructure.Identity.Context
         {
             var optionsBuilder = new DbContextOptionsBuilder<IdentityContext>();
             //optionsBuilder.UseSqlServer("Server=DESKTOP-UH1LS5T\\SQLEXPRESS;Database=SGBL;Trusted_Connection=True;MultipleActiveResultSets=True;TrustServerCertificate=True;Encrypt=False");
-            optionsBuilder.UseSqlServer("Server=localhost;Database=CoretaERP;User Id=sa;Password=abm23;TrustServerCertificate=True;Encrypt=False;MultipleActiveResultSets=True");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-2MA536R;Database=CoretaERP;Trusted_Connection=True;TrustServerCertificate=True;");
 
 
             return new IdentityContext(optionsBuilder.Options);

@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoretaERP.Application\CoretaERP.Application.csproj" />
+    <ProjectReference Include="..\CoretaERP.Domain\CoretaERP.Domain.csproj" />
   </ItemGroup>
 
 </Project>

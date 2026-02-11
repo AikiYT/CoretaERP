@@ -1,0 +1,36 @@
+﻿@model List<CoretaERP.Application.ViewModels.Gestion.RoleViewModel>
+
+@{
+    ViewData["Title"] = "Gestión de Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Gestión de Roles</h2>
+
+<form asp-action="CreateRole" method="post">
+    <input name="nombre" class="form-control" placeholder="Nuevo Rol" />
+    <button class="btn btn-primary mt-2">Crear Rol</button>
+</form>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in Model)
+        {
+            <tr>
+                <td>@role.Nombre</td>
+                <td>
+                    <a asp-action="DeleteRole" asp-route-id="@role.Id" class="btn btn-danger btn-sm">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

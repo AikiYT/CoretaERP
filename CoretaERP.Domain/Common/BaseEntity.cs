@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoretaERP.Application.Services
+namespace CoretaERP.Domain.Common
 {
-    internal class GestionService
+    public abstract class BaseEntity
     {
+        public int Id { get; set; }
     }
 }
