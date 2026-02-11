@@ -13,5 +13,6 @@ namespace CoretaERP.Application.Interfaces.Services
         Task<List<RoleViewModel>> GetRolesAsync();
         Task CreateRoleAsync(string roleName);
         Task DeleteRoleAsync(string roleId);
+        Task<List<UserViewModel>> GetUsersAsync();
     }
 }

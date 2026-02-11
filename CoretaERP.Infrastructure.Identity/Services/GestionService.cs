@@ -64,15 +64,36 @@ namespace CoretaERP.Infrastructure.Identity.Services
                 UserName = vm.Email,
                 Email = vm.Email,
                 FirstName = vm.Nombre,
-                LastName = "N/A" // 👈 SOLUCIÓN TEMPORAL
+                LastName = "N/A" // para evitar NULL
             };
-
             var result = await _userManager.CreateAsync(user, vm.Password);
 
             if (!result.Succeeded)
                 throw new Exception(string.Join(", ", result.Errors.Select(e => e.Description)));
 
             await _userManager.AddToRoleAsync(user, vm.Rol);
+        }
+        public async Task<List<UserViewModel>> GetUsersAsync()
+        {
+            var users = _userManager.Users.ToList();
+
+            var list = new List<UserViewModel>();
+
+            foreach (var user in users)
+            {
+                var roles = await _userManager.GetRolesAsync(user);
+
+                list.Add(new UserViewModel
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    FirstName = user.FirstName,
+                    LastName = user.LastName,
+                    Rol = roles.FirstOrDefault()
+                });
+            }
+
+            return list;
         }
     }
 }

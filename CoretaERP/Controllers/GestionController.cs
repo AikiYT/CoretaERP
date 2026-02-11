@@ -19,8 +19,15 @@ namespace CoretaERP.Controllers
 
         public async Task<IActionResult> Usuarios()
         {
+            var viewModel = new UsuariosViewModel
+            {
+                NuevoUsuario = new CreateUserViewModel(),
+                Usuarios = await _gestionService.GetUsersAsync()
+            };
+
             ViewBag.Roles = await _gestionService.GetRolesAsync();
-            return View(new CreateUserViewModel());
+
+            return View(viewModel);
         }
 
         public async Task<IActionResult> Roles()
@@ -30,13 +37,13 @@ namespace CoretaERP.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateUser(CreateUserViewModel vm)
+        public async Task<IActionResult> CreateUser(UsuariosViewModel model)
         {
-            await _gestionService.CreateUserAsync(vm);
+            await _gestionService.CreateUserAsync(model.NuevoUsuario);
             return RedirectToAction("Usuarios");
         }
 
-        [HttpPost]
+            [HttpPost]
         public async Task<IActionResult> CreateRole(string nombre)
         {
             await _gestionService.CreateRoleAsync(nombre);

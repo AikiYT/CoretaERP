@@ -5,47 +5,18 @@
 
 <h2>Módulo de Gestión</h2>
 
-<div class="card-container">
+<div style="display:flex;gap:20px;flex-wrap:wrap;">
 
     <div class="card">
-        <h4>Gestión de Usuarios</h4>
-        <a asp-controller="Gestion" asp-action="Usuarios" class="btn-coreta">
-            Ir a Usuarios
-        </a>
+        <h3>Usuarios</h3>
+        <p>Administración de usuarios del sistema.</p>
+        <a asp-action="Usuarios" class="btn-primary">Ir a Usuarios</a>
     </div>
 
     <div class="card">
-        <h4>Gestión de Roles</h4>
-        <a asp-controller="Gestion" asp-action="Roles" class="btn-coreta">
-            Ir a Roles
-        </a>
+        <h3>Roles</h3>
+        <p>Administración de roles del sistema.</p>
+        <a asp-action="Roles" class="btn-primary">Ir a Roles</a>
     </div>
 
 </div>
-
-<style>
-    .card-container {
-        display: flex;
-        gap: 30px;
-        margin-top: 20px;
-    }
-
-    .card {
-        background: #1E293B;
-        padding: 20px;
-        border-radius: 15px;
-        color: white;
-        width: 300px;
-    }
-
-    .btn-coreta {
-        display: inline-block;
-        margin-top: 10px;
-        padding: 10px 20px;
-        border-radius: 20px;
-        background: #3CB371;
-        color: white;
-        text-decoration: none;
-    }
-</style>
-
