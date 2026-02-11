@@ -4,9 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CoretaERP.Infrastructure.Persistence.Context
+namespace CoretaERP.Application.Enums
 {
-    public class CoretaDbContext
+    public enum Roles
     {
+        superAdmin,
+        Admi,
+        Basic,
+        Biblotecario
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoretaERP.Infrastructure.Persistence
 {
-    internal class ServiceRegistration
+    public class ServiceRegistration
     {
     }
 }
