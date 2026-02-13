@@ -19,6 +19,93 @@
     </a>
 </div>
 
+<style>
+
+    /* Fondo general del módulo */
+    body {
+        background-color: #f4f6f9;
+    }
+
+    /* Títulos */
+    h2, h4 {
+        font-weight: 600;
+        color: #1f2937;
+    }
+
+    /* Tarjeta del formulario */
+    form {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+
+    /* Inputs y Select */
+    .form-control {
+        border-radius: 10px !important;
+        border: 1px solid #e5e7eb;
+        padding: 8px 12px;
+        transition: all 0.2s ease-in-out;
+    }
+
+        .form-control:focus {
+            border-color: #3CB371;
+            box-shadow: 0 0 0 3px rgba(60,179,113,0.15);
+        }
+
+    /* Botón principal */
+    .btn-primary {
+        background-color: #3CB371 !important;
+        border: none !important;
+        border-radius: 10px;
+        padding: 8px 18px;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+
+        .btn-primary:hover {
+            background-color: #2e8b57 !important;
+            transform: translateY(-1px);
+        }
+
+    /* Tabla */
+    table {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    thead {
+        background-color: #1f2937;
+        color: white;
+    }
+
+    th {
+        padding: 12px !important;
+        font-weight: 500;
+    }
+
+    td {
+        padding: 12px !important;
+        vertical-align: middle !important;
+    }
+
+    tbody tr:hover {
+        background-color: #f9fafb;
+        transition: 0.2s;
+    }
+
+    /* Separador */
+    hr {
+        border-top: 1px solid #e5e7eb;
+        margin: 30px 0;
+    }
+
+</style>
+
 <h2>Crear Usuario</h2>
 
 <form asp-action="CreateUser" method="post">

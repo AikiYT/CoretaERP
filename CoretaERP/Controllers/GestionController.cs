@@ -1,9 +1,11 @@
 ﻿using CoretaERP.Application.Interfaces.Services;
 using CoretaERP.Application.ViewModels.Gestion;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CoretaERP.Controllers
 {
+    [Authorize(Roles = "Administrador,SuperAdmin")]
     public class GestionController : Controller
     {
         private readonly IGestionService _gestionService;

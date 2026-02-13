@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿@using CoretaERP.Infrastructure.Identity.Entities
+@using Microsoft.AspNetCore.Identity
+@using CoretaERP.Domain.Entities
+@inject UserManager<ApplicationUser> UserManager
+
+@{
+    var currentUser = await UserManager.GetUserAsync(User);
+}
+
+<!DOCTYPE html>
 <html>
 <head>
     <title>@ViewData["Title"] - Coreta ERP</title>
@@ -64,12 +73,35 @@
 <body>
     <div class="container">
         <div class="sidebar">
+            <div style="padding:15px; border-top:1px solid #ccc; margin-top:20px;">
+                <strong>@currentUser?.FirstName</strong>
+                <br />
+               @*  <small>@currentUser?.Email</small> *@
+            </div>
             <h2>Coreta ERP</h2>
 
             <a asp-controller="Home" asp-action="Index">Dashboard</a>
-            <a asp-controller="Gestion" asp-action="Usuarios">Gestión</a>
+            @* <a asp-controller="Gestion" asp-action="Usuarios">Gestión</a> *@
+            @if (User.IsInRole("Administrador") || User.IsInRole("SuperAdmin"))
+            {
+                <li>
+                    <a asp-controller="Gestion" asp-action="Usuarios">
+                        Gestión
+                    </a>
+                </li>
+            }
             <a asp-controller="RecursosHumanos" asp-action="Index">RR - HH</a>
-            <a asp-controller="Ventas" asp-action="Index">Venta - Compra</a>
+           @*  <a asp-controller="Ventas" asp-action="Index">Venta - Compra</a> *@
+            @if (User.IsInRole("Administrador")
+                        || User.IsInRole("SuperAdmin")
+                        || User.IsInRole("Ventas"))
+            {
+                <li>
+                    <a asp-controller="Ventas" asp-action="Index">
+                        Ventas
+                    </a>
+                </li>
+            }
             <a asp-controller="Proveedores" asp-action="Index">Proveedores</a>
             <a asp-controller="Inventario" asp-action="Index">Inventario</a>
             <a asp-controller="Reportes" asp-action="Index">Reportes</a>
